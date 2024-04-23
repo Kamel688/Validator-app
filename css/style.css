@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: royalblue;
+}
+
+.shadow {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.shadow-show {
+  display: block;
+}
+
+.wrapper {
+  position: relative;
+  padding: 2em;
+  width: 100%;
+  max-width: 900px;
+}
+
+.form {
+  display: flex;
+  position: relative;
+  background-color: white;
+}
+.form .heading {
+  margin-bottom: 0.5em;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.form input {
+  padding: 1em 2em;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #12bd95;
+}
+.form__img-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url("/images/attractions6.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  transition: right 0.5s;
+}
+.form__img-text-bold {
+  margin-bottom: 0.6em;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.form__img-text-bold-span {
+  color: #12bd95;
+}
+.form__img-text {
+  margin-bottom: 0.6em;
+  font-size: 2.2rem;
+  z-index: 1;
+}
+.form__img-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+.form__img-btn {
+  padding: 0.8em 1.6em;
+  margin-top: 0.4em;
+  background: none;
+  border: none;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s, border 0.3s;
+}
+.form__img-btn:hover {
+  background-color: #12bd95;
+  border-color: #12bd95;
+}
+.form .fa-arrow-left {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 4rem;
+  color: #12bd95;
+  cursor: pointer;
+}
+.form__login {
+  padding: 4em;
+  width: 50%;
+}
+.form__login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.form__login-input-box {
+  position: relative;
+  margin-bottom: 2.2em;
+}
+.form__login-input-box i {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  color: #12bd95;
+}
+.form__login-text-remind {
+  margin-bottom: 0.2em;
+  font-size: 1.8rem;
+  color: #12bd95;
+  cursor: pointer;
+}
+.form__login-text-register {
+  margin: 0.3em 0;
+  font-size: 1.8em;
+  text-align: center;
+}
+.form__login-text-register-span {
+  color: #12bd95;
+  cursor: pointer;
+}
+.form__login-text-other {
+  margin-bottom: 1em;
+  font-size: 1.7rem;
+  text-align: center;
+  color: gray;
+}
+.form__login-social {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  font-size: 1.9rem;
+}
+.form__login-social i {
+  margin-right: 0.5em;
+}
+.form__login-social-facebook {
+  display: flex;
+  padding: 0.3em 0.6em;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  color: #3b5998;
+}
+.form__login-social-facebook:hover {
+  background-color: #3b5998;
+  color: #ffffff;
+}
+.form__login-social-google {
+  display: flex;
+  padding: 0.3em 0.6em;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  color: #DB4437;
+}
+.form__login-social-google:hover {
+  background-color: #DB4437;
+  color: #ffffff;
+}
+.form__register {
+  padding: 4em;
+  width: 50%;
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+.form__register-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form__register-content-box {
+  margin-bottom: 1.4em;
+}
+.form__register-input-box {
+  position: relative;
+}
+.form__register-input-box i {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  color: #12bd95;
+}
+.form__register-error {
+  margin-left: 0.2em;
+  margin-top: 0.4em;
+  font-size: 1.5rem;
+  color: red;
+  visibility: hidden;
+}
+.form__register-show-error {
+  visibility: visible;
+}
+.form__register-btns {
+  display: flex;
+}
+.form__btn {
+  padding: 1.1em;
+  margin: 1em 0;
+  width: 100%;
+  border: none;
+  font-size: 1.5rem;
+  background-color: #12bd95;
+  color: #ffffff;
+  border: 3px solid #12bd95;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.form__btn:hover {
+  background-color: #ffffff;
+  color: #12bd95;
+}
+.form__btn-register:first-child {
+  margin-right: 2em;
+}
+.form__active {
+  opacity: 1;
+}
+
+.success {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  background-color: #ffffff;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  z-index: 1;
+}
+.success__top {
+  display: flex;
+  justify-content: center;
+  padding: 1.4em;
+  background-color: #12bd95;
+}
+.success__top-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 92px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 5.6rem;
+}
+.success__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+}
+.success__bottom-text-bold {
+  margin-bottom: 0.5em;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.success__bottom-text {
+  margin: 0.2em 0;
+}
+.success__bottom-btn {
+  margin-top: 1.2em;
+  padding: 0.8em 1.6em;
+  border-radius: 8px;
+  background-color: #12bd95;
+  color: #ffffff;
+  border: 3px solid #12bd95;
+  font-size: 1.45rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.success__bottom-btn:hover {
+  background-color: #ffffff;
+  color: #12bd95;
+}
+.success-show {
+  display: block;
+}
+
+@keyframes show {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}/*# sourceMappingURL=style.css.map */

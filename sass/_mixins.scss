@@ -1,0 +1,18 @@
+@use "_colors.scss" as *;
+@mixin socialBoxStyle {
+	display: flex;
+	padding: 0.3em 0.6em;
+	border: 1px solid $light-gray;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+@mixin iconStyle {
+	position: absolute;
+	left: 2px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.6rem;
+	color: $main-color;
+}
